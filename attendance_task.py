@@ -118,9 +118,11 @@ def clear_project(file_name):
       msg.clear_content()
       
 
-create_excel_for_staff()
-choose_subject_and_student()
 
+
+if __name__ == "__main__":
+    create_excel_for_staff()
+    choose_subject_and_student()
 
 
 # naming convention -- done
