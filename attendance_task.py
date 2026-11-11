@@ -57,8 +57,6 @@ def create_excel_for_student( subject , student_data ):
       #save file as it is 
       student_workbook.save(f"{subject} Attendance.xlsx") 
       
-
-
 # take input from staff and make sure that it's match my length 
 def choose_subject_and_student():
       # take the subject number and make sure that he enter the right number 
