@@ -48,10 +48,7 @@ def create_excel_for_staff():
       #save file as it is 
       staff_workbook.save("Students Attendance.xlsx") 
 
-def create_excel_for_student(
-      subject ,
-      student_data
-):
+def create_excel_for_student( subject , student_data ):
       #title for the file 
       student_sheet.title = f"{subject} Attendance"
       student_sheet.append(headers)
