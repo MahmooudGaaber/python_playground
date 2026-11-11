@@ -46,7 +46,7 @@ def create_excel():
 
 
 # take input from staff and make sure that it's match my length 
-def makeStaffChooseSubject():
+def choose_subject_and_student():
       # get the number of subject by ignore the static 2 columns 
       subject_count = len(headers) - 2
       student_count = len(students) 
@@ -81,7 +81,7 @@ def update_absence_record():
       repeat_choice = input(" There is Another Process or you have end your job ? (y/n)")
 
       if repeat_choice.lower() == 'y':
-            makeStaffChooseSubject()
+            choose_subject_and_student()
       elif repeat_choice.lower() == 'n':
             if target_cell.value == 2:
                   send_mail("Warning please care for you attendance")
@@ -105,7 +105,7 @@ def send_mail(message_body):
       
 
 create_excel()
-makeStaffChooseSubject()
+choose_subject_and_student()
 
 # naming convention -- done
 # global, using import for method in the class
