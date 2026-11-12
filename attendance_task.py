@@ -7,7 +7,10 @@ from take_absent_model import TakeAbsentData
 import os
 from dotenv import load_dotenv
 
-#initial Workbook for excel file , and read the excel 
+#load APP_PASSWORD from the .env file
+load_dotenv()
+
+#initial Workbook for excel file , and read the excel
 staff_workbook = Workbook()
 staff_sheet = staff_workbook.active
 
@@ -121,9 +124,7 @@ def clear_project(file_name):
       
 
 
-
 if __name__ == "__main__":
-    load_dotenv()
     create_excel_for_staff()
     choose_subject_and_student()
 
