@@ -4,6 +4,8 @@ from pathlib import Path
 import smtplib
 from email.message import EmailMessage
 from take_absent_model import TakeAbsentData
+import os
+from dotenv import load_dotenv
 
 #initial Workbook for excel file , and read the excel 
 staff_workbook = Workbook()
@@ -24,7 +26,7 @@ take_absent = TakeAbsentData( len(students) ,len(headers) - 2 )
 
 #email data
 sender_email = "m.gaber@tubahealth.com"
-app_password = "ukdi anug gyxc cmvt"
+app_password = os.getenv("APP_PASSWORD")
 receiver_email = "mahmoud.gr231@gmail.com"
 
 
@@ -121,6 +123,7 @@ def clear_project(file_name):
 
 
 if __name__ == "__main__":
+    load_dotenv()
     create_excel_for_staff()
     choose_subject_and_student()
 
