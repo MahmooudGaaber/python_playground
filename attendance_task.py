@@ -4,8 +4,13 @@ from pathlib import Path
 import smtplib
 from email.message import EmailMessage
 from take_absent_model import TakeAbsentData
+import os
+from dotenv import load_dotenv
 
-#initial Workbook for excel file , and read the excel 
+#load APP_PASSWORD from the .env file
+load_dotenv()
+
+#initial Workbook for excel file , and read the excel
 staff_workbook = Workbook()
 staff_sheet = staff_workbook.active
 
@@ -24,7 +29,7 @@ take_absent = TakeAbsentData( len(students) ,len(headers) - 2 )
 
 #email data
 sender_email = "m.gaber@tubahealth.com"
-app_password = "ukdi anug gyxc cmvt"
+app_password = os.getenv("APP_PASSWORD")
 receiver_email = "mahmoud.gr231@gmail.com"
 
 
@@ -117,7 +122,6 @@ def clear_project(file_name):
       file_path.unlink(missing_ok=True)
       msg.clear_content()
       
-
 
 
 if __name__ == "__main__":
